@@ -1,0 +1,4 @@
+C:\dev\Decisions-Modules\Decisions.Box\Decisions.Box\obj\Debug\netcoreapp3.1\Decisions.Box.csprojAssemblyReference.cache
+C:\dev\Decisions-Modules\Decisions.Box\Decisions.Box\obj\Debug\netcoreapp3.1\Decisions.Box.AssemblyInfoInputs.cache
+C:\dev\Decisions-Modules\Decisions.Box\Decisions.Box\obj\Debug\netcoreapp3.1\Decisions.Box.AssemblyInfo.cs
+C:\dev\Decisions-Modules\Decisions.Box\Decisions.Box\obj\Debug\netcoreapp3.1\Decisions.Box.csproj.CoreCompileInputs.cache

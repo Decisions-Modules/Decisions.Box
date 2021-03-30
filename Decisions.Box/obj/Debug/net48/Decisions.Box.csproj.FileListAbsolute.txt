@@ -1,0 +1,11 @@
+C:\dev\Decisions-Modules\Decisions.Box\Decisions.Box\obj\Debug\net48\Decisions.Box.csprojAssemblyReference.cache
+C:\dev\Decisions-Modules\Decisions.Box\Decisions.Box\obj\Debug\net48\Decisions.Box.AssemblyInfoInputs.cache
+C:\dev\Decisions-Modules\Decisions.Box\Decisions.Box\obj\Debug\net48\Decisions.Box.AssemblyInfo.cs
+C:\dev\Decisions-Modules\Decisions.Box\Decisions.Box\obj\Debug\net48\Decisions.Box.csproj.CoreCompileInputs.cache
+C:\dev\Decisions-Modules\Decisions.Box\Decisions.Box\bin\Debug\net48\Decisions.Box.dll
+C:\dev\Decisions-Modules\Decisions.Box\Decisions.Box\bin\Debug\net48\Decisions.Box.pdb
+C:\dev\Decisions-Modules\Decisions.Box\Decisions.Box\bin\Debug\net48\DecisionsFramework.dll
+C:\dev\Decisions-Modules\Decisions.Box\Decisions.Box\bin\Debug\net48\Newtonsoft.Json.dll
+C:\dev\Decisions-Modules\Decisions.Box\Decisions.Box\obj\Debug\net48\Decisions.Box.csproj.CopyComplete
+C:\dev\Decisions-Modules\Decisions.Box\Decisions.Box\obj\Debug\net48\Decisions.Box.dll
+C:\dev\Decisions-Modules\Decisions.Box\Decisions.Box\obj\Debug\net48\Decisions.Box.pdb

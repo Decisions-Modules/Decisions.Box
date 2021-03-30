@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "mhnTDnkMT61AgfGJKvAbkXK2wif5WB8fhOZybRJ/a5EpJaLhZhXh7Zq+YvR73EZSKTXvHLUNT/rClIeoQMdpZw==",
+  "success": true,
+  "projectFilePath": "C:\\dev\\Decisions-Modules\\Decisions.Box\\Decisions.Box\\Decisions.Box.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Jeff.Bordeaux\\.nuget\\packages\\decisionssdk\\6.16.0\\decisionssdk.6.16.0.nupkg.sha512",
+    "C:\\Users\\Jeff.Bordeaux\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

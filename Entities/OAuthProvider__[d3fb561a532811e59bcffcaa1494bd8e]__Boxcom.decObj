@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<ExportDescription xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>Box.com</Name>
+  <ParentFolderId>INTEGRATIONS_OAUTH_PROVIDERS_FOLDER</ParentFolderId>
+  <ParentFolderPath>System/Integrations/OAuth/Providers</ParentFolderPath>
+  <TypeName>OAuthProvider</TypeName>
+  <ShortTypeName>OAuthProvider</ShortTypeName>
+  <Id>d3fb561a-5328-11e5-9bcf-fcaa1494bd8e</Id>
+  <ExportedBy>admin@decisions.com</ExportedBy>
+  <ExportedOn>2015-09-04T13:19:12.3018634-04:00</ExportedOn>
+  <StructureImport>false</StructureImport>
+  <DependsOnStructures>false</DependsOnStructures>
+  <Size>643</Size>
+  <Data>SnNvblN0b3JhZ2VQSwMEFAAAAAgAZmokR+pQJvwAAgAAlAMAAAsAAABKc29uU3RvcmFnZZVS227iMBD9FZTnECA3CBLSct3SpQSFFGmfkIknxcXEwXHashX/vuMQ2IeVqt0X23PmnBn7jD+NttH/NDZ62cbhKhw9Tsex0W+bGP5cTZfDp6nRNyaQsIKJrLDCYan213UlxRujIM3GPT2T5AjvQh7MxgakhgaOZVttq202xiVXpYRBBqWShJuNVbnjLPkB51gcIBtkJeeGaVSlazF2rkIb8YoUwamEQj1HC0ztlcqLfqtF8tzaiQ8rEUc8s5YgWtJSWoBCXUBI9gv+SUVubK1MEiiKqvF/dbzeeUw435Hk8EeKSi4SwveiUC3kTSAlaMoYjSuPINEJJDo5Ob74p5OdSnro+W5+Fj042d3cS12no+y/dWtIJKir+l1G08fIWQ/ZazF2Hz56i9NTBuTUzTqvudg4qL6NbU6RT5105/kd0vQcu9fsdMBrBrskbaYJIR03cHe0p53YM0pBjyPFgNAjy1iBQ1RCbhi8hxk/1znIFFPnmeC6wQTB+TKefo+G8Txcrrfh8Dl+2K6icDOfTKP1dhYucL/Llvh5UDK6OnuHJ1AkkuXq+iHqbKMyuXF7DJLRBKKAhtkENyT6jtf1Az9wPccN7MDztXVHQVnKgH7FqQuN9Juqt36j9+9/vdetyhcUIpM9ewN686wO675tDXEek5cCEYKIcTENPZH25fIbUEsBAjMAFAAAAAgAZmokR+pQJvwAAgAAlAMAAAsAAAAAAAAAAAAAAAAAAAAAAEpzb25TdG9yYWdlUEsFBgAAAAABAAEAOQAAACkCAAAAAA==</Data>
+  <RequiresApproval>false</RequiresApproval>
+  <OverridingImport>false</OverridingImport>
+</ExportDescription>
