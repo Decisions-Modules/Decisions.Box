@@ -1,7 +1,7 @@
 <CreateModuleInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 	<Resources NoComponents="true">
 		<CoreServicesDlls>
-		  <string>.\Decisions.Box\obj\Debug\net5.0\win-x64\Decisions.Box.dll</string>
+		  <string>.\Decisions.Box\obj\Debug\net6.0\win-x64\Decisions.Box.dll</string>
 		</CoreServicesDlls>
 		<CliDlls/>
 		<WebPages/>
@@ -12,7 +12,7 @@
 		<ObjectsToImport/>
 		<MsSqlScript/>
 	</Resources>
-	<Version/>
+	<Version>7.10</Version>
 	<ImagePath />
   <Description>Box.com is a cloud file storage service.  This module allows user to store files in Box.com from a Flow, or get files from Box in a Flow.</Description>
 </CreateModuleInfo>
