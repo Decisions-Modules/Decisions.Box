@@ -13,6 +13,6 @@
 		<MsSqlScript/>
 	</Resources>
 	<Version>7.10</Version>
-	<ImagePath />
+	<ImagePath>./image.png</ImagePath>
   <Description>Box.com is a cloud file storage service.  This module allows user to store files in Box.com from a Flow, or get files from Box in a Flow.</Description>
 </CreateModuleInfo>
