@@ -143,6 +143,7 @@ public class BoxSettings : AbstractModuleSettings, IInitializable, INotifyProper
     
     [DataMember]
     [WritableValue]
+    [PropertyClassification(0, "Use Developer Token", new string[] { "Alternate Authentication" })]
     public bool UseDeveloperToken
     {
         get { return useDeveloperToken; }
@@ -188,6 +189,7 @@ public class BoxSettings : AbstractModuleSettings, IInitializable, INotifyProper
     
     [DataMember]
     [WritableValue]
+    [PropertyClassification(0, "Use JSON Authentication File", new string[] { "Alternate Authentication" })]
     public bool UseJsonAuthFile
     {
         get => useJsonAuthFile;

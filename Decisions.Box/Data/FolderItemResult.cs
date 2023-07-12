@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Serialization;
-using System.Text;
+﻿using System.Runtime.Serialization;
 
 namespace Decisions.Box
 {
@@ -23,6 +19,5 @@ namespace Decisions.Box
 
         [DataMember]
         public string error_message { get; set; }
-        
     }
 }
