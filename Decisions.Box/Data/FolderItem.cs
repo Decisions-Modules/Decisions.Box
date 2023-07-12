@@ -26,6 +26,5 @@ namespace Decisions.Box
         [DataMember]
         [WritableValue]
         public string name { get; set; }
-
     }
 }

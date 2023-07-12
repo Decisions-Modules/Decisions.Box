@@ -31,13 +31,13 @@ namespace Decisions.Box;
 [Writable]
 public class BoxSettings : AbstractModuleSettings, IInitializable, INotifyPropertyChanged, IValidationSource
 {
-    // Client ID
+     // Client ID
      [ORMField]
      private string clientId;
 
      [DataMember]
      [WritableValue]
-     [PropertyHiddenByValue(nameof(UseJson), true, true)]
+     [PropertyHiddenByValue(nameof(UseJsonAuthFile), true, true)]
      public string ClientId
      {
          get => clientId;
@@ -54,7 +54,7 @@ public class BoxSettings : AbstractModuleSettings, IInitializable, INotifyProper
 
     [DataMember]
     [WritableValue]
-    [PropertyHiddenByValue(nameof(UseJson), true, true)]
+    [PropertyHiddenByValue(nameof(UseJsonAuthFile), true, true)]
     public string ClientSecret
     {
         get => clientSecret;
@@ -72,7 +72,7 @@ public class BoxSettings : AbstractModuleSettings, IInitializable, INotifyProper
     [DataMember]
     [WritableValue]
     [PropertyHiddenByValue(nameof(UseDeveloperToken), true, true)]
-    [PropertyHiddenByValue(nameof(UseJson), true, true)]
+    [PropertyHiddenByValue(nameof(UseJsonAuthFile), true, true)]
     public string PrivateKey
     {
         get => privateKey;
@@ -90,7 +90,7 @@ public class BoxSettings : AbstractModuleSettings, IInitializable, INotifyProper
     [DataMember]
     [WritableValue]
     [PropertyHiddenByValue(nameof(UseDeveloperToken), true, true)]
-    [PropertyHiddenByValue(nameof(UseJson), true, true)]
+    [PropertyHiddenByValue(nameof(UseJsonAuthFile), true, true)]
     public string PrivateKeyPassword
     {
         get => privateKeyPassword;
@@ -108,7 +108,7 @@ public class BoxSettings : AbstractModuleSettings, IInitializable, INotifyProper
     [DataMember]
     [WritableValue]
     [PropertyHiddenByValue(nameof(UseDeveloperToken), true, true)]
-    [PropertyHiddenByValue(nameof(UseJson), true, true)]
+    [PropertyHiddenByValue(nameof(UseJsonAuthFile), true, true)]
     public string PublicKeyId
     {
         get => publicKeyId;
@@ -126,7 +126,7 @@ public class BoxSettings : AbstractModuleSettings, IInitializable, INotifyProper
     [DataMember]
     [WritableValue]
     [PropertyHiddenByValue(nameof(UseDeveloperToken), true, true)]
-    [PropertyHiddenByValue(nameof(UseJson), true, true)]
+    [PropertyHiddenByValue(nameof(UseJsonAuthFile), true, true)]
     public string EnterpriseId
     {
         get => enterpriseId;
@@ -137,7 +137,7 @@ public class BoxSettings : AbstractModuleSettings, IInitializable, INotifyProper
         }
     }
     
-    // Use Developer Token
+    // Use Developer Token for authentication
     [ORMField]
     private bool useDeveloperToken;
     
@@ -150,9 +150,9 @@ public class BoxSettings : AbstractModuleSettings, IInitializable, INotifyProper
         {
             useDeveloperToken = value;
             if (useDeveloperToken)
-                UseJson = false;
+                UseJsonAuthFile = false;
 
-            OnPropertyChanged(nameof(UseJson));
+            OnPropertyChanged(nameof(UseJsonAuthFile));
             OnPropertyChanged(nameof(UseDeveloperToken));
             OnPropertyChanged(nameof(ClientId));
             OnPropertyChanged(nameof(clientSecret));
@@ -182,22 +182,22 @@ public class BoxSettings : AbstractModuleSettings, IInitializable, INotifyProper
         }
     }
 
-    // Use JSON
+    // Use JSON configuration file for authentication
     [ORMField]
-    private bool useJson;
+    private bool useJsonAuthFile;
     
     [DataMember]
     [WritableValue]
-    public bool UseJson
+    public bool UseJsonAuthFile
     {
-        get => useJson;
+        get => useJsonAuthFile;
         set
         {
-            useJson = value;
-            if (useJson)
+            useJsonAuthFile = value;
+            if (UseJsonAuthFile)
                 UseDeveloperToken = false;
 
-            OnPropertyChanged(nameof(UseJson));
+            OnPropertyChanged(nameof(UseJsonAuthFile));
             OnPropertyChanged(nameof(UseDeveloperToken));
             OnPropertyChanged(nameof(ClientId));
             OnPropertyChanged(nameof(clientSecret));
@@ -217,7 +217,7 @@ public class BoxSettings : AbstractModuleSettings, IInitializable, INotifyProper
 
     [DataMember]
     [WritableValue]
-    [PropertyHiddenByValue(nameof(UseJson), true, false)]
+    [PropertyHiddenByValue(nameof(UseJsonAuthFile), true, false)]
     public FileData JsonConfig
     {
         get => jsonConfig;
@@ -248,7 +248,7 @@ public class BoxSettings : AbstractModuleSettings, IInitializable, INotifyProper
             return GetDeveloperClient();
         }
 
-        if (UseJson)
+        if (UseJsonAuthFile)
         {
             if (JsonConfig == null)
                 throw new ArgumentNullException($"JSON Keyfile nis missing. {shortError}");
@@ -300,8 +300,7 @@ public class BoxSettings : AbstractModuleSettings, IInitializable, INotifyProper
 
         return t.Result;
     }
-    
-    
+
     public event PropertyChangedEventHandler PropertyChanged;
 
     public void Initialize()
@@ -318,7 +317,7 @@ public class BoxSettings : AbstractModuleSettings, IInitializable, INotifyProper
     {
         List<ValidationIssue> issues = new List<ValidationIssue>();
 
-        if (!UseJson)
+        if (!UseJsonAuthFile)
         {
             if (string.IsNullOrEmpty(ClientId))
                 issues.Add(new ValidationIssue((object)ClientId, "You must specify Client Id."));
@@ -333,7 +332,7 @@ public class BoxSettings : AbstractModuleSettings, IInitializable, INotifyProper
                 issues.Add(new ValidationIssue((object)DeveloperToken, "You must specify Developer Token."));
         }
         
-        if (UseJson)
+        if (UseJsonAuthFile)
         {
             if (JsonConfig == null)
                 issues.Add(new ValidationIssue(JsonConfig, "You must provide the JSON configuration file provided in your administration console."));
@@ -378,7 +377,6 @@ public class BoxSettings : AbstractModuleSettings, IInitializable, INotifyProper
                 IsDefaultGridAction = true,
                 OkActionName = "SAVE",
                 CancelActionName = null
-
             });
         }
 

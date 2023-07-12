@@ -10,9 +10,10 @@ using System.Text;
 
 namespace Decisions.Box;
 
-[AutoRegisterMethodsOnClass(true, "Integration/Box")]
+//[AutoRegisterMethodsOnClass(true, "Integration/Box/")]
 public static class BoxSteps
 {
+    [Obsolete]
     public static FolderItemResult GetFolderItems([TokenPicker] string tokenId, string folderId, int limit, int offset)
     {
         if (string.IsNullOrEmpty(folderId))
@@ -65,6 +66,7 @@ public static class BoxSteps
         return result;
     }
 
+    [Obsolete]
     public static string UploadDocument([TokenPicker] string tokenId, string folderId, string documentName,
         byte[] fileContents)
     {
@@ -151,6 +153,7 @@ public static class BoxSteps
         return "";
     }
 
+    [Obsolete]
     public static FolderItem CreateFolder([TokenPicker] string tokenId, string name, string parentFolderId)
     {
         if (string.IsNullOrEmpty(parentFolderId))
