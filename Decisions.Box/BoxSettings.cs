@@ -372,9 +372,7 @@ public class BoxSettings : AbstractModuleSettings, IInitializable, INotifyProper
 
         if (canAdministrate)
         {
-            actions.Add(new EditObjectAction(typeof(BoxSettings),
-                "Edit Box.com Module Settings", "Edit Box.com Module Settings", "",
-                new GetValueDelegate(() => ObjectGraphSerializer.Clone(this)), SaveSettings)
+            actions.Add(new EditEntityAction(typeof(BoxSettings), "Edit", "Edits Box.com Module Settings") 
             {
                 IsDefaultGridAction = true,
                 OkActionName = "SAVE",
