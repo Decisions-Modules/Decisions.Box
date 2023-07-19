@@ -238,9 +238,13 @@ public class BoxSettings : AbstractModuleSettings, IInitializable, INotifyProper
     public BoxClient GetClient()
     {
         const string shortError = "Please configure the Box Module Settings.";
-        if (string.IsNullOrEmpty(ClientId) || string.IsNullOrEmpty(ClientSecret))
-            throw new ArgumentNullException($"Missing Client Id or Client Secret. {shortError}");
 
+        if (!UseJsonAuthFile)
+        {
+            if (string.IsNullOrEmpty(ClientId) || string.IsNullOrEmpty(ClientSecret))
+                throw new ArgumentNullException($"Missing Client Id or Client Secret. {shortError}");
+        }
+        
         // Use developer token 
         if (UseDeveloperToken)
         {
