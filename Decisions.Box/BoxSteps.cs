@@ -70,7 +70,6 @@ public static class BoxSteps
     public static string UploadDocument([TokenPicker] string tokenId, string folderId, string documentName,
         byte[] fileContents)
     {
-        /*
         DynamicORM orm = new DynamicORM();
         OAuthToken token = (OAuthToken)orm.Fetch(typeof(OAuthToken), tokenId);
 
@@ -149,7 +148,6 @@ public static class BoxSteps
 
         string success = nonErrorSR.ReadToEnd();
         return success;
-        */
         return "";
     }
 
@@ -175,7 +173,7 @@ public static class BoxSteps
         req.Method = "POST";
 
         string
-            json = ""; //JsonConvert.SerializeObject(new BoxFile { name = name, parent = new FileParent { id = parentFolderId } });
+            json = JsonConvert.SerializeObject(new BoxFile { name = name, parent = new FileParent { id = parentFolderId } });
 
         using (Stream reqStream = req.GetRequestStream())
         {
@@ -191,5 +189,18 @@ public static class BoxSteps
             FolderItem result = JsonConvert.DeserializeObject<FolderItem>(resJson);
             return result;
         }
+    }
+    
+    public class BoxFile
+    {
+        public string name { get; set; }
+        public FileParent parent { get; set; }
+        
+    }
+
+    public class FileParent
+    {
+        public string id { get; set; }
+
     }
 }
