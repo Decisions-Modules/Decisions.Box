@@ -1,0 +1,22 @@
+{
+	"Resources": {
+		"NoComponents": true,
+		"CoreServicesDlls": {
+			"string": ".\\Decisions.Box\\obj\\Decisions.Box.dll"
+		},
+		"ReferenceDlls": {
+			"string": ".\\Decisions.Box\\obj\\Box.V2.dll"
+		},
+		"CliDlls": "",
+		"WebPages": "",
+		"SilverlightDlls": "",
+		"AgentDlls": "",
+		"InstallScript": "",
+		"SqlScripts": "",
+		"ObjectsToImport": "",
+		"MsSqlScript": ""
+    },
+    "Version": "8.13.0",
+    "ImagePath": "./image.png",
+    "Description": "Box.com is a cloud file storage service.  This module allows user to store files in Box.com from a Flow, or get files from Box in a Flow."
+}
