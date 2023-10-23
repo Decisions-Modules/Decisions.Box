@@ -16,7 +16,7 @@
 		"ObjectsToImport": null,
 		"MsSqlScript": null
     },
-    "Version": "8.15.0",
+    "Version": "8.17.0",
     "ImagePath": "./image.png",
     "Description": "Box.com is a cloud file storage service.  This module allows user to store files in Box.com from a Flow, or get files from Box in a Flow."
 }
