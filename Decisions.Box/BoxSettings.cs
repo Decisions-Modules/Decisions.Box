@@ -342,6 +342,10 @@ public class BoxSettings : AbstractModuleSettings, IInitializable, INotifyProper
         {
             if (JsonConfig == null)
                 issues.Add(new ValidationIssue(JsonConfig, "You must provide the JSON configuration file provided in your administration console."));
+            
+            string extension = System.IO.Path.GetExtension(JsonConfig?.FileName) ?? "";
+            if (!extension.Contains("json", StringComparison.OrdinalIgnoreCase))
+                issues.Add(new ValidationIssue(this, "Unexpected file extension; file extension is not JSON"));
         }
         else if (!useDeveloperToken)
         {
