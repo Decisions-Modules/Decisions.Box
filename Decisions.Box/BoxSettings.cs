@@ -257,14 +257,14 @@ public class BoxSettings : AbstractModuleSettings, IInitializable, INotifyProper
         if (UseJsonAuthFile)
         {
             if (JsonConfig == null)
-                throw new ArgumentNullException($"JSON Keyfile nis missing. {shortError}");
+                throw new ArgumentNullException($"JSON Keyfile is missing. {shortError}");
             
             return GetJsonClient();
         }
 
         if (string.IsNullOrEmpty(EnterpriseId) || string.IsNullOrEmpty(PrivateKey) ||
             string.IsNullOrEmpty(PrivateKeyPassword) || string.IsNullOrEmpty(PublicKeyId))
-            throw new ArgumentNullException($"Missing configuratiguration. {shortError}");
+            throw new ArgumentNullException($"Missing configuration. {shortError}");
         
         return GetFullClient();
     }
@@ -340,12 +340,14 @@ public class BoxSettings : AbstractModuleSettings, IInitializable, INotifyProper
         
         if (UseJsonAuthFile)
         {
-            if (JsonConfig == null)
+            if (JsonConfig == null) 
                 issues.Add(new ValidationIssue(JsonConfig, "You must provide the JSON configuration file provided in your administration console."));
-            
-            string extension = System.IO.Path.GetExtension(JsonConfig?.FileName) ?? "";
-            if (!extension.EndsWith("json", StringComparison.OrdinalIgnoreCase))
-                issues.Add(new ValidationIssue(this, "Unexpected File Extension. The Configuration File must be a valid JSON file with a .json extension."));
+            else 
+            {
+                string extension = System.IO.Path.GetExtension(JsonConfig?.FileName) ?? "";
+                if (!extension.EndsWith("json", StringComparison.OrdinalIgnoreCase))
+                    issues.Add(new ValidationIssue(this, "Unexpected File Extension. The Configuration File must be a valid JSON file with a .json extension."));
+            }
         }
         else if (!useDeveloperToken)
         {
