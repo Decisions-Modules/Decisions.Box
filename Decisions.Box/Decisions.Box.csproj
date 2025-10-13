@@ -3,12 +3,12 @@
     <OutputType>Library</OutputType>
   </PropertyGroup>
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net9.0</TargetFramework>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Box.V2" Version="5.2.2" />
-    <PackageReference Include="DecisionsSDK" Version="8.8.0" />
+    <PackageReference Include="Box.V2" Version="5.8.0" />
+    <PackageReference Include="DecisionsSDK" Version="9.15.0" />
 	<PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
 </Project>
