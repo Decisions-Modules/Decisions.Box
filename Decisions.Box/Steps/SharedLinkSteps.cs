@@ -9,13 +9,13 @@ namespace Decisions.Box.Steps;
 [AutoRegisterMethodsOnClass(true, "Integration/Box/Shared Links")]
 public class SharedLinkSteps
 {
-    public string CreateSharedLink(string fileId)
+    public string CreateSharedLink(string fileId, BoxSharedLinkAccessType accessType = BoxSharedLinkAccessType.open)
     {
         BoxClient client = ModuleSettingsAccessor<BoxSettings>.GetSettings().GetClient();
 
         var sharedLinkParams = new BoxSharedLinkRequest()
         {
-            Access = BoxSharedLinkAccessType.open,
+            Access = accessType,
             Permissions = new BoxPermissionsRequest
             {
                 Download = true,
