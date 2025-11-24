@@ -14,15 +14,31 @@ public class SharedLinkSteps
     {
         BoxClient client = ModuleSettingsAccessor<BoxSettings>.GetSettings().GetClient();
 
-        var sharedLinkParams = new BoxSharedLinkRequest()
+        BoxSharedLinkRequest sharedLinkParams;
+
+        // Leave permissions NULL when using Collaborators
+        if (accessType == SharedLinkAccessType.Collaborators)
         {
-            Access = ToBoxAccessType(accessType),
-            Permissions = new BoxPermissionsRequest
+            sharedLinkParams = new BoxSharedLinkRequest
+            {
+                Access = BoxSharedLinkAccessType.collaborators
+            };
+        }
+        else
+        {
+            // Valid for Open / Company
+            var permissions = new BoxPermissionsRequest
             {
                 Download = true,
                 Edit = true
-            }
-        };
+            };
+
+            sharedLinkParams = new BoxSharedLinkRequest
+            {
+                Access = ToBoxAccessType(accessType),
+                Permissions = permissions
+            };
+        }
         
         Task<string> t = Task.Run(async () =>
         {
